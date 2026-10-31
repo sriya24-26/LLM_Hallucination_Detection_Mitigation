@@ -1,0 +1,12 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Python Caches
+__pycache__/
+*.py[cod]
+
+# Local caches and data files
+cache/
+*.parquet
