@@ -55,3 +55,4 @@ typer==0.27.3
 typing-inspection==0.4.4
 typing_extensions==4.16.0
 tzdata==2026.6
+psutil>=5.9.0
