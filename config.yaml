@@ -1,1 +1,80 @@
+# config.yaml - single source of truth for the whole project (Phase 0, step 7).
+# Change a value only after telling the team, and commit the change.
+# No script may hard-code anything that appears here.
 
+project:
+  seed: 42
+  val_fraction: 0.30          # split by example_id, never by claim
+  paths:
+    datasets: datasets/       # raw downloads, git-ignored
+    cache: cache/             # scores, hidden states, API cache, git-ignored
+    results: results/         # final CSV tables, committed
+
+models:
+  nli: roberta-large-mnli
+  probe: Qwen/Qwen2.5-0.5B-Instruct
+  probe_fallback: Qwen/Qwen2.5-1.5B-Instruct    # tried once if the 0.5B probe is weak
+  embedding: sentence-transformers/all-MiniLM-L6-v2
+
+llm:
+  provider: groq
+  sampler_model: openai/gpt-oss-20b     # SelfCheckGPT samples (measured Nov 1)
+  rewrite_model: openai/gpt-oss-120b    # claim rewriting and mitigation
+  temperature_rewrite: 0.0
+  temperature_mitigation: 0.0
+  max_retries: 6
+  daily_request_limit: 1000             # per model, per account
+  tokens_per_minute: 8000               # reasoning models: keep max_tokens small
+
+sampling:                        # evaluation subsample sizes (the n in Report 2)
+  khb_claims_per_setting: 300         # 3 context settings -> 900 claims
+  ragtruth_responses_per_task: 100    # test split has 900 responses per task; adjust after counting sentences (target ~900 sentences)
+  ragtruth_drop_quality: [incorrect_refusal, truncated]
+  halueval_questions: 300             # 2 claims each -> 600 claims
+  controlled_questions: 300           # same questions, 2 pairs each -> up to 600 pairs (questions whose right answer is not found in the passage are skipped)
+  stratify_by_label: true             # keep the original label proportions
+
+path_a:
+  window_tokens: 200
+  stride_tokens: 100
+  max_length: 512
+  max_windows: 12
+
+gate:
+  max_windows: 3
+  embedding_max_tokens: 256
+  logreg_C: 1.0
+  hypothesis_template: "This passage answers the question: {query}"
+
+probe:
+  batch_size: 16
+  layer: null                        # chosen in Phase 2 by leave-one-topic-out AUROC
+  clip_percentiles: [0.2, 1.0, 5.0, null]   # null = no clipping
+  classifier_grid:
+    logreg_C: [0.1, 1.0, 10.0]
+    mlp_hidden: [128]
+    mlp_lr: 0.001
+    mlp_l2: 0.0001
+
+thresholds:
+  grid_points: 21                    # quantiles of each score on the validation split
+  tuning_metric: f1
+  tuned_per: dataset                 # KnowHalBench pooled over its 3 settings, RAGTruth over its 3 tasks
+  controlled_set_uses: halueval      # controlled set reuses the HaluEval thresholds
+
+selfcheck:
+  k_samples: 4
+  temperature: 1.0
+  max_evidence_tokens: 1500
+
+evaluation:
+  bootstrap_resamples: 1000
+  bootstrap_unit: example_id         # resample whole examples, not single claims
+
+team:
+  reference_laptop: ""               # median-spec laptop; fill in after the team call
+  owners:
+    data: ""
+    path_b: ""
+    path_a_gate: ""
+    baselines_eval: ""
