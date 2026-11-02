@@ -23,6 +23,7 @@ llm:
   temperature_rewrite: 0.0
   temperature_mitigation: 0.0
   max_retries: 6
+  reasoning_effort: low                 # gpt-oss thinks less, so max_tokens goes to the answer
   daily_request_limit: 1000             # per model, per account
   tokens_per_minute: 8000               # reasoning models: keep max_tokens small
 
@@ -30,6 +31,7 @@ sampling:                        # evaluation subsample sizes (the n in Report 2
   khb_claims_per_setting: 300         # 3 context settings -> 900 claims
   ragtruth_responses_per_task: 100    # test split has 900 responses per task; adjust after counting sentences (target ~900 sentences)
   ragtruth_drop_quality: [incorrect_refusal, truncated]
+  ragtruth_min_sentence_words: 3      # shorter fragments (list numbers, headers) are not claims
   halueval_questions: 300             # 2 claims each -> 600 claims
   controlled_questions: 300           # same questions, 2 pairs each -> up to 600 pairs (questions whose right answer is not found in the passage are skipped)
   stratify_by_label: true             # keep the original label proportions
