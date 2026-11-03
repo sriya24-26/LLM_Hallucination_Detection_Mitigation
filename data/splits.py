@@ -50,6 +50,7 @@ if __name__ == "__main__":
         else:
             print("not found (skipped):", path.name)
     df = assign_splits(pd.concat(frames, ignore_index=True))
+    df["claim_text"] = df.claim_text.str.replace("*", "", regex=False)
     assert df.claim_id.is_unique, "duplicate claim_id"
     df.to_parquet(CACHE / "claims.parquet", index=False)
     print("\nsaved %d claims -> %s" % (len(df), CACHE / "claims.parquet"))

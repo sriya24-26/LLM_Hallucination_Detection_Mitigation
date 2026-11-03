@@ -66,6 +66,8 @@ def build_controlled():
                          evidence=edited, claim_text=claims.loc["halueval-%d-halluc" % r["qid"], "claim_text"], label=1))
         rows.append(dict(base, claim_id="controlled-%d-reliable" % r["qid"], setting="reliable",
                          evidence=r["knowledge"], claim_text=claims.loc["halueval-%d-right" % r["qid"], "claim_text"], label=0))
+        rows.append(dict(base, claim_id="controlled-%d-reliable_wrongclaim" % r["qid"], setting="reliable_wrongclaim",
+                         evidence=r["knowledge"], claim_text=claims.loc["halueval-%d-halluc" % r["qid"], "claim_text"], label=0))
     print("skipped questions:", skipped)
     return pd.DataFrame(rows, columns=COLUMNS)
  

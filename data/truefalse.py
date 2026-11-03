@@ -8,8 +8,9 @@ and is deliberately excluded from probe training and leave-one-topic-out.
 from pathlib import Path
 
 import pandas as pd
-
+import yaml
 ROOT = Path(__file__).resolve().parent.parent
+CFG = yaml.safe_load(open(ROOT / "config.yaml", encoding="utf-8"))
 DATA_DIR = ROOT / "datasets" / "truefalse"
 TOPICS = ["cities", "inventions", "elements", "animals", "companies", "facts"]
 
@@ -38,3 +39,7 @@ if __name__ == "__main__":
     df = load_truefalse()
     print("total statements:", len(df))
     print(df.groupby("topic").agg(n=("label", "size"), false_share=("label", "mean")).round(3))
+    out_path = ROOT / CFG["project"]["paths"]["cache"] / "truefalse.parquet"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(out_path, index=False)
+    print("saved %d statements -> %s" % (len(df), out_path))
