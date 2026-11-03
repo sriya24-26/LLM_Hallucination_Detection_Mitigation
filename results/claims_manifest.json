@@ -1,12 +1,12 @@
 {
   "date": "2026-11-03",
   "file": "claims.parquet",
-  "rows": 3827,
-  "sha256": "cad2151423faa020a9c6b4995b70704c611d9fbf05aa6c84524de8c5fceaea17",
+  "rows": 4127,
+  "sha256": "e86e123487d61e7850137fc47519c46f82356b908af5b8590b1d2c691970977c",
   "per_dataset": {
     "ragtruth": 2090,
+    "khb": 900,
     "halueval": 600,
-    "khb": 600,
     "controlled": 537
   }
 }

@@ -32,5 +32,5 @@ for r in load_qa_sample():
     if cover(right, h) > cover(wrong, h) or cover(wrong, g) > cover(right, g):
         bad.append((r["question"], r["right_answer"], r["hallucinated_answer"], g, h))
 print("checked %d, suspicious %d" % (checked, len(bad)))
-for q, ra, ha, g, h in bad[:5]:
+for q, ra, ha, g, h in bad[5:24]:
     print("\nQ:", q, "\n right:", ra, "\n wrong:", ha, "\n label0 claim:", g, "\n label1 claim:", h)
