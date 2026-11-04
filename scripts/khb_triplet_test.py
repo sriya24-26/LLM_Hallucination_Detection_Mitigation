@@ -22,7 +22,13 @@ nli = NLI()
 pairs = sum(len(nli.windows(e)) for e in c.evidence)
 print("%d claims, %d NLI pairs (about %.0f min at 1.2 s/pair)" % (len(c), pairs, pairs * 1.2 / 60))
 t0 = time.perf_counter()
-ae, _, _ = nli.path_a(c.evidence.tolist(), c.claim_text.tolist())
+parts = []
+for s in range(0, len(c), 30):
+    ch = c.iloc[s:s + 30]
+    parts.append(nli.path_a(ch.evidence.tolist(), ch.claim_text.tolist())[0])
+    done, el = min(s + 30, len(c)), time.perf_counter() - t0
+    print("  %d / %d claims, %.1f min elapsed, about %.1f min left" % (done, len(c), el / 60, el / done * (len(c) - done) / 60), flush=True)
+ae = np.concatenate(parts)
 c = c.assign(s_A=1 - ae)
 print("done in %.1f min\n" % ((time.perf_counter() - t0) / 60))
 for st, g in c.groupby("setting"):
