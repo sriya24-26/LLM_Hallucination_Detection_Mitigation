@@ -74,9 +74,9 @@ evaluation:
   bootstrap_unit: example_id         # resample whole examples, not single claims
 
 team:
-  reference_laptop: ""               # median-spec laptop; fill in after the team call
+  reference_laptop: "Sriya (DESKTOP-S2NH3PN)"   # median-spec laptop, used for the latency table
   owners:
-    data: ""
-    path_b: ""
-    path_a_gate: ""
-    baselines_eval: ""
+    data: "Sriya"
+    path_b: "Michelle"
+    path_a_gate: "Erina"
+    baselines_eval: "Kriti"
