@@ -50,7 +50,7 @@ gate:
 
 probe:
   batch_size: 16
-  layer: null                        # chosen in Phase 2 by leave-one-topic-out AUROC
+  layer: 15                        # chosen in Phase 2 by leave-one-topic-out AUROC
   clip_percentiles: [0.2, 1.0, 5.0, null]   # null = no clipping
   classifier_grid:
     logreg_C: [0.1, 1.0, 10.0]
