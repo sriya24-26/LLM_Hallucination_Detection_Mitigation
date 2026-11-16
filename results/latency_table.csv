@@ -1,0 +1,5 @@
+part,host,processor,cores,ram_gb,items,nli_pairs,seconds,ms_per_item,ms_per_pair
+gate,DESKTOP-1JVUD0O,"Intel64 Family 6 Model 142 Stepping 9, GenuineIntel",4,17.0,182,319,957.6,5261.6,3001.9
+gate,DESKTOP-S2NH3PN,"Intel64 Family 6 Model 142 Stepping 12, GenuineIntel",8,8.1,227,389,451.1,1987.1,1159.6
+path_a,DESKTOP-1JVUD0O,"Intel64 Family 6 Model 142 Stepping 9, GenuineIntel",4,17.0,788,2888,4391.4,5572.9,1520.6
+path_a,DESKTOP-S2NH3PN,"Intel64 Family 6 Model 142 Stepping 12, GenuineIntel",8,8.1,985,3762,6194.7,6289.0,1646.7
