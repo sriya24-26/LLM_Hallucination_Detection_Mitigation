@@ -1,0 +1,27 @@
+component,hyperparameter,value,how it is set
+General,random seed,42,fixed
+General,validation / test split,30 / 70 (by example_id),fixed
+General,bootstrap resamples / unit,1000 / example_id,fixed
+Models,"NLI model (Path A, gate)",roberta-large-mnli,fixed
+Models,probe model (Path B),Qwen/Qwen2.5-0.5B-Instruct,fixed (1.5B tried as a comparison)
+Models,sentence embedding (gate),sentence-transformers/all-MiniLM-L6-v2,fixed
+Path A,window / stride / max length (tokens),200 / 100 / 512,fixed in advance
+Path A,max windows per evidence,12,fixed in advance
+Gate,NLI hypothesis template,This passage answers the question: {query},fixed in advance
+Gate,logistic regression C,1.0,fixed in advance
+Gate,max NLI windows / embedding max tokens,3 / 256,fixed in advance
+Probe,layer L,15,best mean leave-one-topic-out AUROC over all layers
+Probe,clipping percentile (options),"[0.2, 1.0, 5.0, None]",leave-one-topic-out AUROC
+Probe,clipping percentile (chosen),see probe_choice json,leave-one-topic-out AUROC
+Probe,classifier (chosen) and C,"?, C=?",leave-one-topic-out AUROC
+Probe,MLP hidden units / learning rate / L2,[128] / 0.001 / 0.0001,small grid
+Probe,logistic regression C (options),"[0.1, 1.0, 10.0]",small grid
+Probe,MLP max epochs / early stopping (in code),"200 / on (10% held out, scikit-learn defaults)",fixed
+Probe,logistic regression max iterations (in code),1000,fixed
+Probe,batch size / max tokens (in code),16 / 256,fixed
+Thresholds,grid points per threshold,21,quantiles of the validation scores
+Thresholds,tuning metric / tuned per,f1 / dataset,"grid search on validation, then frozen"
+SelfCheckGPT,samples k / temperature,4 / 1.0,fixed
+SelfCheckGPT,sampler model / max evidence tokens,openai/gpt-oss-20b / 1500,fixed
+LLM calls,rewrite and mitigation model,openai/gpt-oss-120b,fixed
+LLM calls,temperature (rewrite / mitigation) / reasoning effort,0.0 / 0.0 / low,fixed
