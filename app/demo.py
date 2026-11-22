@@ -82,12 +82,17 @@ def analyse(pipe, query, evidence, answer, thr_name, use_groq):
     p = pipe.thr[thr_name]
     kind = diagnose(d, p["tau_g"], p["tau_A"], p["tau_B"])[2]
 
-    note, regenerated = "", None
+    note, regenerated, why = "", None, "the Groq box was not ticked when Check was clicked"
     if use_groq and "A" in kind:
         try:
-            regenerated = regenerate(query, evidence)
+            regenerated = regenerate(query, evidence) or None
+            if regenerated is None:
+                why = "Groq returned an empty answer"
         except Exception as e:  # noqa: BLE001 (missing key, daily limit, network)
-            note = " Groq call failed (%s); flagged sentences are marked instead." % str(e)[:120]
+            why = "Groq call failed: %s" % str(e)[:100]
+            note = " %s." % why
+    elif use_groq:
+        why = "no sentence is flagged A"
     rows, parts, placed = [], [], False
     for claim, k, (_, r) in zip(claims, kind, d.iterrows()):
         if k == "A" and regenerated is not None:
@@ -96,7 +101,7 @@ def analyse(pipe, query, evidence, answer, thr_name, use_groq):
                 parts.append(regenerated)
                 placed = True
         elif k == "A":
-            action = "flagged (would regenerate from the reference)"
+            action = "flagged, not regenerated: %s" % why
             parts.append("%s [flagged: not supported by the reference]" % claim)
         elif k == "B":
             action, _ = "hedged", parts.append(hedge(claim))
