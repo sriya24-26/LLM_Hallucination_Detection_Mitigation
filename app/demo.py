@@ -13,6 +13,7 @@ Do not use --share: it would let strangers spend your Groq quota.
 import argparse
 import json
 import sys
+import threading
 import time
 from pathlib import Path
 
@@ -64,6 +65,24 @@ class Pipeline:
         return g, a_entail, p_know, t
 
 
+_GROQ_LOCK = threading.Lock()
+
+
+def regenerate_threadsafe(query, evidence):
+    """Gradio runs every click in a worker thread, but llm.py keeps one SQLite connection that may only be used in the
+    thread that created it. Open a fresh connection for each call and close it afterwards (llm.py stays unchanged)."""
+    import llm
+
+    with _GROQ_LOCK:
+        llm._db = None
+        try:
+            return regenerate(query, evidence)
+        finally:
+            if getattr(llm, "_db", None) is not None:
+                llm._db.close()
+                llm._db = None
+
+
 def split_claims(answer):
     import pysbd
 
@@ -85,7 +104,7 @@ def analyse(pipe, query, evidence, answer, thr_name, use_groq):
     note, regenerated, why = "", None, "the Groq box was not ticked when Check was clicked"
     if use_groq and "A" in kind:
         try:
-            regenerated = regenerate(query, evidence) or None
+            regenerated = regenerate_threadsafe(query, evidence) or None
             if regenerated is None:
                 why = "Groq returned an empty answer"
         except Exception as e:  # noqa: BLE001 (missing key, daily limit, network)
