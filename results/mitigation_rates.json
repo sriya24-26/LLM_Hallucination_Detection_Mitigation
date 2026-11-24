@@ -1,0 +1,17 @@
+{
+  "n_flagged_hallucinated_tested": 30,
+  "corrected": 27,
+  "correction_rate": 0.9,
+  "correction_ci95": [
+    0.7437855868473338,
+    0.9654007400402839
+  ],
+  "n_flagged_correct_tested": 30,
+  "harmed": 7,
+  "harm_rate": 0.23333333333333334,
+  "harm_ci95": [
+    0.11792239210501229,
+    0.40928672330324267
+  ],
+  "note": "HaluEval test split, Flag A only, gold answers that are not yes/no; the regenerated answer is checked for the gold answer string."
+}

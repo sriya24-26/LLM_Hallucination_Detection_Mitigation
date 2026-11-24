@@ -1,0 +1,61 @@
+claim_id,label,claim_text,gold,regenerated,contains_gold
+halueval-1040-halluc,1,The first female senator of New York served two terms representing New York in the United States Senate.,Hillary Rodham Clinton,Hillary Rodham Clinton served two terms representing New York in the United States Senate.,True
+halueval-1104-halluc,1,The Walls Have Eyes was produced by a member of the Gibb family.,the Bee Gees,Walls Have Eyes was produced by a member of the Bee Gees.,True
+halueval-1104-right,0,Walls Have Eyes was produced by a member of the Bee Gees.,the Bee Gees,Walls Have Eyes was produced by a member of the Bee Gees.,True
+halueval-1424-right,0,Richard Ney wrote the lyrics of “Portofino” with a collaborator on “Fiddler on the Roof.”,Richard Ney,Sheldon Harnick wrote the lyrics of Portofino and also collaborated on “Fiddler on the Roof.”,False
+halueval-1489-right,0,"Megan Fox, who debuted in the 2004 American teen musical comedy film Confessions of a Teenage Drama Queen, co‑starred in the 2007 blockbuster action film Transformers.",Transformers,She co-starred in the 2007 blockbuster action film “Transformers.”,True
+halueval-1604-right,0,Ernst Julius Günther Röhm is the German military officer and early Nazi Party member with whom Colonel Pyat has sexual encounters in Michael Moorcock’s 2006 novel The Vengeance of Rome.,Ernst Julius Günther Röhm,Ernst Julius Günther Röhm.,True
+halueval-1654-right,0,Ronald Wayne “Ron” Shelton is the director who has won an Oscar.,"Ronald Wayne ""Ron"" Shelton",Neither Ron Shelton nor Ken Mora has won an Oscar.,False
+halueval-1743-halluc,1,"The headquarters of Diageo is in Manchester, England.","London, England","The headquarters of the company that launched the Fridge advertising campaign is in London, England.",True
+halueval-2579-halluc,1,"Tobias Schweinsteiger's brother is part of the Chicago Fire, but not as a midfielder.",midfielder,He plays as a midfielder for Chicago Fire.,True
+halueval-2591-right,0,"The president of South Korea under whose direct control the Presidential Council on Nation Branding, Korea lies was born on 24 January 1953.",24 January 1953,He was born on 24 January 1953.,True
+halueval-2621-right,0,"The 3852 Democratic National Convention nominated Franklin Pierce over Lewis Cass, the American military officer who represented Michigan in the United States Senate.",Lewis Cass,The convention nominated Franklin Pierce over Lewis Cass.,True
+halueval-3116-right,0,"The stadium where the 1932 German football championship Final was played, which opened in 1928, is located next to the Zeppelinfeld.",Zeppelinfeld,It was located next to Zeppelinfeld.,True
+halueval-3119-halluc,1,"The official name for Larry, the 10 Downing Street cat, is “Cat Chancellor”.",Chief Mouser to the Cabinet Office,Larry is also called the Chief Mouser to the Cabinet Office.,True
+halueval-319-halluc,1,Simone Kirby was not in any Irish dramatic television series that aired between 2010 and 2014 on RTÉ Television.,Love/Hate,Simone Kirby played Tracey Moynihan in the Irish dramatic television series “Love/Hate.”,True
+halueval-3432-halluc,1,"Francesco Rospigliosi Pallavicini was born in Rome, in what was then the Italian duchies under papal control.",Papal States,"He was born in Rome, in what was then the Papal States.",True
+halueval-3432-right,0,"Francesco Rospigliosi Pallavicini was born in Rome, which at the time was part of the Papal States, the territories in the Italian Peninsula under the sovereign direct rule of the pope from the 8th century until 1870.",Papal States,"He was born in Rome, in what was then the Papal States.",True
+halueval-3483-right,0,Jack Moore played collegiately at a college in the Big Ten conference.,Big Ten,Jack Moore played collegiately at a school that competes in the Big Ten Conference.,True
+halueval-3566-halluc,1,The nickname of the leader of Christy Kinahan's rival gang is “The Phantom.”,The Monk,The leader of Christy Kinahan's rival gang is nicknamed “The Monk.”,True
+halueval-3566-right,0,The nickname of the leader of Christy Kinahan’s rival gang is “The Monk.”,The Monk,The leader of Christy Kinahan's rival gang is nicknamed “The Monk.”,True
+halueval-3608-right,0,Julius Jackson is the son of the boxer from the U.S. Virgin Islands.,U.S. Virgin Islands,Julius Jackson is the son of a boxer from the U.S. Virgin Islands.,True
+halueval-3733-right,0,Scary Movie 5 was released under the independent film distribution label Dimension Films.,Dimension Films,Scary Movie 5 was released under the Dimension Films independent film distribution label.,True
+halueval-3750-halluc,1,Jannik Hansen was never part of the Portland Winterhawks.,San Jose Sharks,Jannik Hansen is currently playing for the San Jose Sharks of the NHL.,True
+halueval-4040-halluc,1,"""The Closer I Get to You"" is a romantic ballad performed by African American Roberta Flack and an Atlantic Records singer.",Donny Hathaway,Donny Hathaway.,True
+halueval-4371-halluc,1,Kentucky is located in the southern region.,one of the nine Census Bureau Divisions,It constitutes one of the nine Census Bureau Divisions of the United States.,True
+halueval-4422-halluc,1,Foxcatcher was set up in Illinois.,Pennsylvania,Foxcatcher is set up in Pennsylvania.,True
+halueval-4422-right,0,Foxcatcher is a 2014 American true‑crime sports drama film about a wrestling team that was set up in Pennsylvania.,Pennsylvania,Foxcatcher is set up in Pennsylvania.,True
+halueval-4554-halluc,1,The distribution center is for PetSmart and Target.,PetSmart,The large distribution center serves Dollar General and PetSmart.,True
+halueval-5138-halluc,1,Richard Boleslawski was a prolific director.,Howard M. Mitchell,Howard M. Mitchell appeared in 270 films between 1910 and 1952 and directed 38 silent films between 1915 and 1927.,True
+halueval-520-right,0,The movie co‑written by the director of “Blood” is The Awakening.,The Awakening,The Awakening.,True
+halueval-53-right,0,Cynthia Nixon received the 2004 Primetime Emmy Award for Outstanding Supporting Actress in a Comedy Series and a Screen Actors Guild Award for her performance in Sex and the City.,Sex and the City,Cynthia Nixon received the 2004 Primetime Emmy Award for Outstanding Supporting Actress in a Comedy Series and a Screen Actors Guild Award for her performance in the HBO series “Sex and the City.”,True
+halueval-5925-right,0,The railroad north of Bates Pond was opened in 1947.,1947,The railroad was opened in 1947.,True
+halueval-5930-right,0,AeroLogic is a joint venture between Lufthansa and the logistics division of Deutsche Post DHL.,Deutsche Post DHL,AeroLogic is a joint venture between Lufthansa and the DHL Express division of Deutsche Post DHL.,True
+halueval-5947-right,0,"The George Richardson Memorial Trophy champions in the 1965 Memorial Cup final were the Niagara Falls Flyers, one of two junior ice‑hockey franchises that played in the top tier of the Ontario Hockey Association.",Niagara Falls Flyers,The George Richardson Memorial Trophy champions were the Niagara Falls Flyers.,True
+halueval-6201-right,0,Tom Verlaine is older than David Vincent.,Tom Verlaine,Tom Verlaine is older.,True
+halueval-6209-halluc,1,The nationality of actors in that movie is from various countries.,South Korean,"The actor mentioned, Go Soo, is South Korean.",True
+halueval-6482-right,0,The German composer who influenced Der Bärenhäuter created the opera Hansel and Gretel.,"""Hansel and Gretel""",Hansel and Gretel.,False
+halueval-6537-halluc,1,The Panthers played at Golden Gopher Arena.,U.S. Century Bank Arena,The 2012–13 FIU Panthers men's basketball team played their home games at U.S. Century Bank Arena.,True
+halueval-6658-halluc,1,The political capital is Abidjan.,Yamoussoukro,The political capital is Yamoussoukro.,True
+halueval-6868-right,0,The Chenango Canal was longer than the Black River Canal.,Chenango Canal,It does not.,False
+halueval-6916-right,0,The medium-sized bear native to North America that can be seen in Harriman State Park is the American black bear.,American black bear,The American black bear (Ursus americanus) can be seen in Harriman State Park.,True
+halueval-7359-halluc,1,"Peppers Manor House is located in Sutton Forest, but the New South Wales State Heritage Register is located in Sydney.",Australia,"The Peppers Manor House is located in Sutton Forest, New South Wales, Australia, and the New South Wales State Heritage Register is a heritage list covering places throughout the state of New South Wales, Australia.",True
+halueval-7573-right,0,George Franklin Getty was an American lawyer whose patrilineal lineage was of Scots‑Irish ancestry and practiced the Methodist faith.,George Franklin Getty,It does not.,False
+halueval-7811-halluc,1,The crime thriller the actress in the leading role of “Grease 2” played in in 1988 was “Lethal Weapon 2”.,Michelle Pfeiffer,It does not.,False
+halueval-8085-halluc,1,The Trenton Prong is a section of the Piedmont province of Antarctica that was formed roughly 480 million years ago.,The Appalachian Mountains,The Trenton Prong is a section of the Piedmont province of the Appalachian Mountains.,True
+halueval-8238-halluc,1,The game “Remove Psychiatric Hospital” by J.T. Petty is focused on an isolated hospital.,Mount Massive Asylum,The game focuses on the remote psychiatric hospital called Mount Massive Asylum.,True
+halueval-8348-halluc,1,The music program “Yesterday” was actually named after a song from the album “Rubber Soul.”,Help!,The program was named after a Beatles song that was first released on the album “Help!”.,True
+halueval-8834-halluc,1,The Progressive was founded first.,Cosmopolitan,Cosmopolitan was founded first.,True
+halueval-8834-right,0,Cosmopolitan was founded before The Progressive.,Cosmopolitan,Cosmopolitan was founded first.,True
+halueval-8835-halluc,1,Roshon Fegan and Camp Rock are associated with Nickelodeon.,Disney,They are both associated with Disney Channel.,True
+halueval-8928-halluc,1,Jacoby Shaddix is more famous than John Waite as a solo artist.,John Charles Waite,John Waite had more fame as a solo artist.,False
+halueval-8928-right,0,John Charles Waite had more fame as a solo artist.,John Charles Waite,John Waite had more fame as a solo artist.,False
+halueval-9105-halluc,1,The 1990-91 U.C. Sampdoria season was the year of Paolo Maldini.,Gianluca Vialli,The season ended with striker Gianluca Vialli as the leading scorer.,True
+halueval-9105-right,0,Gianluca Vialli was the leading scorer for U.C. Sampdoria in the 1990–91 season.,Gianluca Vialli,The season ended with striker Gianluca Vialli as the leading scorer.,True
+halueval-936-right,0,"Mfon Sunday Udoka, a Nigerian‑American former professional basketball player and the new assistant coach of the Nigeria women’s national basketball team the Lady Tigers, who is the sister of NBA player Ime Sunday Udoka—a Nigerian‑American former professional basketball player and current assistant coach for the San Antonio Spurs—belongs to the National Basketball Association (NBA).",National Basketball Association (NBA),San Antonio Spurs.,False
+halueval-958-halluc,1,Transparent and Werner Herzog Eats His Shoe are examples of unconventional documentaries.,documentary,"Both ""Transparent"" and ""Werner Herzog Eats His Shoe"" are documentary films.",True
+halueval-960-halluc,1,"Better Than Ezra was formed earlier, in 1985.",The Melvins,The Melvins were formed earlier.,True
+halueval-960-right,0,The Melvins were formed earlier than Better Than Ezra.,The Melvins,The Melvins were formed earlier.,True
+halueval-9763-halluc,1,The World Games was never held in Lahti.,"Lahti, Finland","The 1997 World Games, when squash was added, took place in Lahti, Finland.",True
+halueval-9813-halluc,1,The American animation studio founded by Terry and Sue Shakespeare with David Molina in 1989 was the main animation studio for the film.,31st Disney animated feature,Aladdin.,False
+halueval-9891-right,0,"Rupert Penry‑Jones, who appears in The 39 Steps, also starred in the series The Strain.",Rupert Penry-Jones,Rupert Penry‑Jones.,True
