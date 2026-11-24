@@ -1,0 +1,16 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "layer": 17,
+  "clip": 1.0,
+  "kind": "mlp",
+  "C": 1.0,
+  "mean_auroc": 0.9025966996552909,
+  "per_topic": {
+    "animals": 0.8734567901234568,
+    "cities": 0.9636855026599579,
+    "companies": 0.9287166666666667,
+    "elements": 0.7974748525841138,
+    "facts": 0.9262493571061202,
+    "inventions": 0.9259970287914295
+  }
+}
