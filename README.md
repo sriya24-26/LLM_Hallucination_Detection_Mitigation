@@ -33,7 +33,7 @@ Nothing is fine-tuned: the NLI model, Qwen and MiniLM are used frozen, and only 
 | KnowHalBench | 0.832 | 0.684 | 0.489 | 0.844 | 0.813 |
 | RAGTruth | 0.691 | 0.615 | 0.520 | 0.740 | 0.706 |
 
-The NLI path is the strongest local detector. The probe works on its own training task (leave-one-topic-out AUROC 0.777) but is at chance on claim sentences, so the pipeline does not outperform the reference-only baseline. All tables, with five metrics and bootstrap intervals, are in `results/`.
+Path A (the NLI-based detector) shows strong validation performance in the sanity checks. However, the combined pipeline does not outperform the reference-only baseline in the main test comparison. The probe works on its own training task (leave-one-topic-out AUROC 0.777) but is at chance on claim sentences, so the pipeline does not outperform the reference-only baseline. All tables, with five evaluation metrics and 95% bootstrap confidence intervals for F1 and AUROC, are in results/.
 
 ## Repository layout
 
@@ -66,7 +66,7 @@ Not in the repository (created locally, see below): `cache/` (claims, scores, mo
 3. Models (about 3 GB, downloaded once into the Hugging Face cache): `python scripts/download_models.py`
 4. Check the environment: `python scripts/check_env.py`
 
-All values (seed 42, the 30/70 split, model names, window sizes, grids, Groq models and limits) are in `config.yaml`; no script hard-codes them.
+Major experiment settings, including the seed, data split, model names, window sizes, hyperparameter grids, and Groq settings, are defined in config.yaml.
 
 ## Data
 
@@ -87,7 +87,7 @@ Run everything from the project root. Every slow result is cached, so reruns are
 ```
 python data/truefalse.py        # 6,077 probe-training statements -> cache/truefalse.parquet
 python data/halueval.py         # 600 claims (uses Groq, cached)
-python data/controlled.py       # controlled unreliable-evidence set, 351 pairs from 117 questions (uses Groq, cached)
+python data/controlled.py       # controlled unreliable-evidence set, 351 examples from 117 questions, with three evidence conditions per question. (uses Groq, cached)
 python data/ragtruth.py         # 2,090 sentences
 python data/khb.py              # 900 claims (Zero, Noisy, Accurate)
 python data/splits.py           # 30% validation / 70% test by example, seed 42 -> cache/claims.parquet (3,941 claims)
