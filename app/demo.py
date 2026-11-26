@@ -28,9 +28,7 @@ from pipeline.diagnose import Ours, diagnose  # noqa: E402
 from pipeline.mitigate import hedge, regenerate, warn  # noqa: E402
 
 MIN_WORDS = CFG["sampling"]["ragtruth_min_sentence_words"]
-EXAMPLE = dict(query="Which city is the capital of France and which river flows through it?",
-               evidence="Paris is the capital and most populous city of France. The Seine flows through Paris.",
-               answer="Paris is the capital of France. The Rhine flows through Paris.")
+
 COLUMNS = ["sentence", "gate g", "Path A risk", "Path B risk", "flag", "action"]
 FLAG_NAMES = {"A": "A: not supported by the reference", "B": "B: unreliable reference, low belief",
               "D": "D: reference supports it, probe disagrees", "": "none"}
@@ -141,9 +139,9 @@ def build_ui(pipe):
     with gr.Blocks(title="Hallucination detection and mitigation") as ui:
         gr.Markdown("# Reliability-weighted hallucination detection and mitigation\n"
                     "Paste a question, a reference passage and an answer to check. Everything runs on the CPU.")
-        q = gr.Textbox(label="Question", value=EXAMPLE["query"])
-        ev = gr.Textbox(label="Reference passage", lines=6, value=EXAMPLE["evidence"])
-        ans = gr.Textbox(label="Answer to check", lines=5, value=EXAMPLE["answer"])
+        q = gr.Textbox(label="Question", lines=2, placeholder="Type the question here")
+        ev = gr.Textbox(label="Reference passage", lines=6, placeholder="Type the reference passage")
+        ans = gr.Textbox(label="Answer to check", lines=5, placeholder="Add the answer to check if right or not")
         with gr.Row():
             thr = gr.Dropdown(choices=list(pipe.thr.keys()), value="halueval", label="Thresholds tuned on")
             groq = gr.Checkbox(value=False, label="Regenerate flagged (A) answers with Groq (needs GROQ_API_KEY in .env)")
